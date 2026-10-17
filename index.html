@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golazo Store | Implementos de Fútbol</title>
-    <link rel="stylesheet" href="style.css">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Tus estilos (el archivo debe llamarse style.css y estar junto a este index.html) -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         </div>
     </header>
 
-    <!-- Sección Hero -->
+    <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <span class="badge">EQUIPAMIENTO PROFESIONAL</span>
@@ -36,63 +38,98 @@
         </div>
     </section>
 
-    <!-- Sección de Productos -->
+    <!-- Productos -->
     <section id="productos" class="products-section container">
         <h2 class="section-title">Nuestros <span>Productos</span></h2>
         <div class="products-grid">
 
             <!-- Producto 1 -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                    <span class="tag">Más Vendido</span>
-                    ⚽
-                </div>
-                <div class="product-info">
-                    <h3>Balón Profesional ProMatch</h3>
-                    <p class="price">$120.000 COP</p>
-                    <p class="description">Máximo control, aerodinámica perfecta y durabilidad en césped natural y
-                        sintético.</p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20el%20Balón%20Profesional%20ProMatch"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="product-image">
+                            <span class="tag">Más Vendido</span>
+                            <img src="img/balon.jpg" alt="Balón Profesional ProMatch">
+                        </div>
+                        <div class="product-info">
+                            <h3>Balón Profesional ProMatch</h3>
+                            <p class="price">$120.000 COP</p>
+                            <p class="description">Máximo control, aerodinámica perfecta y durabilidad en césped
+                                natural.</p>
+                            <div class="btn-card">Ver detalles</div>
+                        </div>
+                    </div>
+                    <div class="card-back"
+                        style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80');">
+                        <h3>Detalles - ProMatch</h3>
+                        <p class="description">Construido con paneles termosellados de alta resistencia. Cuenta con
+                            certificación FIFA Quality Pro, garantizando un vuelo preciso y absorción de agua cero en
+                            días lluviosos.</p>
+                        <a href="https://wa.me/573028602490?text=Hola,%20estoy%20interesado%20en%20el%20Bal%C3%B3n%20Profesional%20ProMatch"
+                            target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Producto 2 -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                    <span class="tag">Nuevo</span>
-                    🧤
-                </div>
-                <div class="product-info">
-                    <h3>Guantes de Arquero Titan Grip</h3>
-                    <p class="price">$150.000 COP</p>
-                    <p class="description">Agarre supremo en cualquier condición climática y protección avanzada en los
-                        dedos.</p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20los%20Guantes%20Titan%20Grip"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="product-image">
+                            <span class="tag">Nuevo</span>
+                            <img src="img/guantes.jpg" alt="Guantes Titan Grip">
+                        </div>
+                        <div class="product-info">
+                            <h3>Guantes Titan Grip</h3>
+                            <p class="price">$150.000 COP</p>
+                            <p class="description">Agarre supremo en cualquier condición climática y protección
+                                avanzada.</p>
+                            <div class="btn-card">Ver detalles</div>
+                        </div>
+                    </div>
+                    <div class="card-back"
+                        style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=800&q=80');">
+                        <h3>Detalles - Titan Grip</h3>
+                        <p class="description">Látex alemán de 4 mm para un agarre profesional en seco y mojado. Corte
+                            negativo para un ajuste perfecto a los dedos y zona de despeje de puños reforzada en
+                            relieve.</p>
+                        <a href="https://wa.me/573028602490?text=Hola,%20estoy%20interesado%20en%20los%20Guantes%20Titan%20Grip"
+                            target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Producto 3 -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                    <span class="tag">Oferta</span>
-                    ⚡
-                </div>
-                <div class="product-info">
-                    <h3>Espinilleras Elite Carbon</h3>
-                    <p class="price">$80.000 COP</p>
-                    <p class="description">Ultra ligeras y resistentes a impactos fuertes. Comodidad absoluta al correr.
-                    </p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20las%20Espinilleras%20Elite%20Carbon"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="product-image">
+                            <span class="tag">Oferta</span>
+                            <img src="img/espinilleras.jpg" alt="Espinilleras Elite Carbon">
+                        </div>
+                        <div class="product-info">
+                            <h3>Espinilleras Elite Carbon</h3>
+                            <p class="price">$80.000 COP</p>
+                            <p class="description">Ultra ligeras y resistentes a impactos fuertes. Comodidad absoluta.
+                            </p>
+                            <div class="btn-card">Ver detalles</div>
+                        </div>
+                    </div>
+                    <div class="card-back"
+                        style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80');">
+                        <h3>Detalles - Elite Carbon</h3>
+                        <p class="description">Fabricadas con fibra de carbono real. Distribuyen la energía del impacto
+                            de manera uniforme protegiendo la tibia sin restar agilidad ni velocidad en carrera.</p>
+                        <a href="https://wa.me/573028602490?text=Hola,%20estoy%20interesado%20en%20las%20Espinilleras%20Elite%20Carbon"
+                            target="_blank" class="btn-card">Comprar por WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Sección Nosotros -->
+    <!-- Nosotros -->
     <section id="nosotros" class="about-section">
         <div class="container about-container">
             <div class="about-text">
@@ -104,13 +141,13 @@
         </div>
     </section>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/573028602490?text=Hola,%20quiero%20más%20información%20sobre%20sus%20productos"
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573028602490?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos"
         class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
         💬
     </a>
 
-    <!-- Pie de Página -->
+    <!-- Pie de página -->
     <footer id="contacto" class="footer">
         <div class="container footer-content">
             <p class="quote">"El talento gana partidos, pero el trabajo en equipo y el esfuerzo implacable ganan
@@ -122,99 +159,3 @@
 </body>
 
 </html>
-
-
-
-
-
-<!-- Sección de Productos -->
-<section id="productos" class="products-section container">
-    <h2 class="section-title">Nuestros <span>Productos</span></h2>
-    <div class="products-grid">
-
-        <!-- Producto 1 -->
-        <div class="product-card">
-            <div class="card-inner">
-                <!-- Frente de la tarjeta -->
-                <div class="card-front">
-                    <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                        <span class="tag">Más Vendido</span>
-                        ⚽
-                    </div>
-                    <div class="product-info">
-                        <h3>Balón Profesional ProMatch</h3>
-                        <p class="price">$120.000 COP</p>
-                        <p class="description">Máximo control, aerodinámica perfecta y durabilidad en césped natural.
-                        </p>
-                        <div class="btn-card">Ver detalles</div>
-                    </div>
-                </div>
-                <!-- Reverso de la tarjeta (Detalle con imagen de fondo oscurecida) -->
-                <div class="card-back"
-                    style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80');">
-                    <h3>Detalles - ProMatch</h3>
-                    <p class="description">Construido con paneles termosellados de alta resistencia. Cuenta con
-                        certificación FIFA Quality Pro, garantizando un vuelo preciso y absorción de agua cero en días
-                        lluviosos.</p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20el%20Balón%20Profesional%20ProMatch"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="product-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                        <span class="tag">Nuevo</span>
-                        🧤
-                    </div>
-                    <div class="product-info">
-                        <h3>Guantes Titan Grip</h3>
-                        <p class="price">$150.000 COP</p>
-                        <p class="description">Agarre supremo en cualquier condición climática y protección avanzada.
-                        </p>
-                        <div class="btn-card">Ver detalles</div>
-                    </div>
-                </div>
-                <div class="card-back"
-                    style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=800&q=80');">
-                    <h3>Detalles - Titan Grip</h3>
-                    <p class="description">Latex Alemán de 4mm para un agarre profesional en seco y mojado. Corte
-                        negativo para un ajuste perfecto a los dedos y zona de despeje de puños reforzada en relieve.
-                    </p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20los%20Guantes%20Titan%20Grip"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="product-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="product-image" style="background: linear-gradient(135deg, #111, #222);">
-                        <span class="tag">Oferta</span>
-                        ⚡
-                    </div>
-                    <div class="product-info">
-                        <h3>Espinilleras Elite Carbon</h3>
-                        <p class="price">$80.000 COP</p>
-                        <p class="description">Ultra ligeras y resistentes a impactos fuertes. Comodidad absoluta.</p>
-                        <div class="btn-card">Ver detalles</div>
-                    </div>
-                </div>
-                <div class="card-back"
-                    style="background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80');">
-                    <h3>Detalles - Elite Carbon</h3>
-                    <p class="description">Fabricadas con fibra de carbono real. Distribuyen la energía del impacto de
-                        manera uniforme protegiendo la tibia sin restar agilidad ni velocidad en carrera.</p>
-                    <a href="https://wa.me/5712345678?text=Hola,%20estoy%20interesado%20en%20las%20Espinilleras%20Elite%20Carbon"
-                        target="_blank" class="btn-card">Comprar por WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>

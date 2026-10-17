@@ -1,4 +1,8 @@
-/* Variables y Reset Global */
+/* ==========================================================
+   GOLAZO STORE - style.css
+   ========================================================== */
+
+/* ---------- Variables y reset ---------- */
 :root {
     --primary: #00ff88;
     --primary-dark: #00cc6a;
@@ -29,7 +33,7 @@ body {
     margin: 0 auto;
 }
 
-/* Encabezado */
+/* ---------- Encabezado ---------- */
 .header {
     background: rgba(11, 15, 25, 0.95);
     position: fixed;
@@ -89,7 +93,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Sección Hero */
+/* ---------- Hero ---------- */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(11, 15, 25, 0.7), rgba(11, 15, 25, 0.9)),
@@ -120,7 +124,6 @@ body {
 }
 
 .hero h2 {
-    font-size.size: 3rem;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
     line-height: 1.1;
@@ -157,7 +160,7 @@ body {
     box-shadow: 0 15px 25px rgba(0, 255, 136, 0.3);
 }
 
-/* Sección de Productos */
+/* ---------- Productos ---------- */
 .products-section {
     padding: 6rem 0;
 }
@@ -179,32 +182,96 @@ body {
     gap: 2.5rem;
 }
 
+/* Tarjeta con perspectiva 3D (altura fija para evitar saltos al girar) */
 .product-card {
-    background-color: var(--card-bg);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: transparent;
+    perspective: 1000px;
+    height: 440px;
+    border: none;
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 255, 136, 0.3);
 }
 
+/* Contenedor interno que gira al pasar el mouse */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.product-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la tarjeta */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.card-back .description {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Imagen del producto (frente de la tarjeta) */
 .product-image {
     height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
     position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .tag {
     position: absolute;
     top: 15px;
     right: 15px;
+    z-index: 2;
     background-color: var(--primary);
     color: var(--dark);
     font-size: 0.75rem;
@@ -256,7 +323,7 @@ body {
     color: var(--dark);
 }
 
-/* Sección Nosotros */
+/* ---------- Nosotros ---------- */
 .about-section {
     background-color: var(--dark-alt);
     padding: 5rem 0;
@@ -276,7 +343,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Botón flotante de WhatsApp */
+/* ---------- Botón flotante de WhatsApp ---------- */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -300,7 +367,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Pie de Página */
+/* ---------- Pie de página ---------- */
 .footer {
     background-color: #070a12;
     padding: 4rem 0 2rem;
@@ -324,82 +391,4 @@ body {
 .copy {
     color: var(--gray);
     font-size: 0.85rem;
-}
-
-
-
-
-/* Contenedor principal de la tarjeta con perspectiva 3D */
-.product-card {
-    background-color: transparent;
-    perspective: 1000px;
-    height: 440px;
-    /* Altura fija para evitar saltos al girar */
-    border: none;
-}
-
-/* Contenedor interno que rota 180 grados al hacer hover */
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transform-style: preserve-3d;
-}
-
-.product-card:hover .card-inner {
-    transform: rotate(180deg);
-    /* Nota: rotateY(180deg) hace el giro horizontal clásico */
-}
-
-/* Ajuste específico para giro horizontal en eje Y */
-.product-card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Caras de la tarjeta (Frente y Atrás) */
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    /* Oculta la cara trasera cuando está de frente */
-    backface-visibility: hidden;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #161616;
-    border: 1px solid #222;
-}
-
-/* Diseño del frente */
-.card-front {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Diseño del reverso (Detalles con imagen de fondo oscurecida) */
-.card-back {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-    background-size: cover;
-    background-position: center;
-}
-
-.card-back h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #00ff88;
-    margin-bottom: 15px;
-}
-
-.card-back .description {
-    font-size: 0.9rem;
-    color: #ddd;
-    margin-bottom: 25px;
-    line-height: 1.5;
 }
