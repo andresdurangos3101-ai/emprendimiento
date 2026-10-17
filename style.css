@@ -1,0 +1,405 @@
+/* Variables y Reset Global */
+:root {
+    --primary: #00ff88;
+    --primary-dark: #00cc6a;
+    --dark: #0b0f19;
+    --dark-alt: #131b2e;
+    --light: #ffffff;
+    --gray: #94a3b8;
+    --card-bg: #1a2238;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.header {
+    background: rgba(11, 15, 25, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+.nav-btn {
+    background-color: var(--primary);
+    color: var(--dark) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Sección Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(11, 15, 25, 0.7), rgba(11, 15, 25, 0.9)),
+        radial-gradient(circle at center, #1b263b 0%, #0b0f19 100%);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.badge {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.hero h2 {
+    font-size.size: 3rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero h2 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 255, 136, 0.3);
+}
+
+/* Sección de Productos */
+.products-section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+}
+
+.section-title span {
+    color: var(--primary);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.product-image {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+}
+
+.tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: var(--dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.product-info {
+    padding: 2rem;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-card {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+/* Sección Nosotros */
+.about-section {
+    background-color: var(--dark-alt);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.about-text p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1001;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Pie de Página */
+.footer {
+    background-color: #070a12;
+    padding: 4rem 0 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    max-width: 600px;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.copy {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+
+
+
+/* Contenedor principal de la tarjeta con perspectiva 3D */
+.product-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 440px;
+    /* Altura fija para evitar saltos al girar */
+    border: none;
+}
+
+/* Contenedor interno que rota 180 grados al hacer hover */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.product-card:hover .card-inner {
+    transform: rotate(180deg);
+    /* Nota: rotateY(180deg) hace el giro horizontal clásico */
+}
+
+/* Ajuste específico para giro horizontal en eje Y */
+.product-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la tarjeta (Frente y Atrás) */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Oculta la cara trasera cuando está de frente */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #161616;
+    border: 1px solid #222;
+}
+
+/* Diseño del frente */
+.card-front {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Diseño del reverso (Detalles con imagen de fondo oscurecida) */
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #00ff88;
+    margin-bottom: 15px;
+}
+
+.card-back .description {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
